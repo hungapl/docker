@@ -5,11 +5,13 @@ Based on image [jupyter/all-spark-notebook](https://hub.docker.com/r/jupyter/all
 
 # What has been added
 
-Added a script file that starts Jupyter notebook in ~/notebooks, this is a dedicated directory just for storing notebook files.  The run script executes the docker command that maps a local directory to the notebooks directory inside the container.
+Added a script file that starts Jupyter notebook in ~/notebooks, this allows user to store notebooks in a local directory outside docker volumes.  
 
 
 # Steps
 
-- Execute build.sh to bulid the docker image
-- Execute run.sh and provide the path of local directory of where the notebooks are stored as an argument to the script file:
-` ./run.sh $NOTEBOOK_FILE_DIR`
+- Run build.sh to bulid the docker image
+- Create a shortcut for the run.sh script file in your bin directory, e.g.
+``` ln -s ${local-clone-dir-of-docker-project}/jupyter-spark/run.sh ~/bin/jupyter-spark ```
+- Go to the directory where you want the notebook files to be stored/modified. Then execute the shortcut to the run script file
+``` jupyter-spark ```
