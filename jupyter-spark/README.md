@@ -13,5 +13,6 @@ Added a script file that starts Jupyter notebook in ~/notebooks, this allows use
 - Run build.sh to bulid the docker image
 - Create a shortcut for the run.sh script file in your bin directory, e.g.
 ``` ln -s ${local-clone-dir-of-docker-project}/jupyter-spark/run.sh ~/bin/jupyter-spark ```
-- Go to the directory where you want the notebook files to be stored/modified. Then execute the shortcut to the run script file
+- Go to the directory where you want the notebook files to be stored/modified. 
+- Execute the shortcut to the run script file
 ``` jupyter-spark ```
