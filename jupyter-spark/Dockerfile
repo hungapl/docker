@@ -6,9 +6,9 @@ USER root
 
 # Create directory for storing jupyter notebooks
 COPY my-start-notebook.sh /usr/local/bin/my-start-notebook.sh
-RUN mkdir ~/notebooks/
-RUN chown root:users /usr/local/bin/my-start-notebook.sh
-RUN chmod a+x /usr/local/bin/my-start-notebook.sh
+RUN chmod u+x /usr/local/bin/my-start-notebook.sh
+RUN mkdir /data/
+RUN mkdir /notebooks/
 
-CMD start-notebook.sh
+CMD my-start-notebook.sh
 

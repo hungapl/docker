@@ -1,4 +1,4 @@
 #!/bin/bash
 
-cd ~/notebooks
+cd /notebooks
 start-notebook.sh

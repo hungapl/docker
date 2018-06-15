@@ -1,2 +1,12 @@
-NOTEBOOK_DIR=$1
-docker run -it --rm -p 8888:8888 -v ${NOTEBOOK_DIR}:/home/jovyan/notebooks my-jupyter-spark
+NOTEBOOK_DIR=`pwd`
+DATA_DIR=/data/
+
+DOCKER_OPT="-it --rm -p 8888:8888 -v ${NOTEBOOK_DIR}:/notebooks/" 
+
+if [ -d "$DATA_DIR" ]; then
+  DOCKER_OPT="${DOCKER_OPT} -v ${DATA_DIR}:/data/"
+fi
+
+echo docker run $DOCKER_OPT my-jupyter-spark /bin/bash
+
+docker run $DOCKER_OPT my-jupyter-spark
