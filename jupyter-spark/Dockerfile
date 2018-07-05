@@ -9,6 +9,6 @@ COPY my-start-notebook.sh /usr/local/bin/my-start-notebook.sh
 RUN chmod u+x /usr/local/bin/my-start-notebook.sh
 RUN mkdir /data/
 RUN mkdir /notebooks/
-
-CMD my-start-notebook.sh
+WORKDIR /notebooks
+CMD start-notebook.sh
 

@@ -8,4 +8,5 @@ if [ -d "$DATA_DIR" ]; then
   DOCKER_OPT="${DOCKER_OPT} -v ${DATA_DIR}:/data/"
 fi
 
+echo docker run $DOCKER_OPT $1 my-jupyter-spark
 docker run $DOCKER_OPT $1 my-jupyter-spark
